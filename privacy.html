@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy – Yubi AppGate</title>
+  <meta name="description" content="Yubi AppGate privacy policy. No personal data collected, no analytics, no tracking.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon" aria-hidden="true">🔐</span>
+        Yubi AppGate
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="how-it-works.html">How It Works</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="security.html">Security</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="page-content">
+    <div class="container">
+
+      <div class="section-header fade-in">
+        <p class="section-label">Legal</p>
+        <h1>Privacy Policy</h1>
+        <p>Last updated: March 15, 2026</p>
+      </div>
+
+      <section class="section">
+        <div class="prose fade-in">
+
+          <h2>Overview</h2>
+          <p>
+            Yubi AppGate ("the app") is designed with privacy as a core principle.
+            The app operates entirely on your device and does not collect, transmit,
+            or store personal data on external servers.
+          </p>
+
+          <h2>Data We Do Not Collect</h2>
+          <p>Yubi AppGate does <strong>not</strong> collect:</p>
+          <ul>
+            <li>Personal information (name, email, phone number)</li>
+            <li>Device identifiers or advertising IDs</li>
+            <li>Location data</li>
+            <li>Usage analytics or behavioral data</li>
+            <li>Browsing history or app usage history</li>
+            <li>Contacts, photos, or other personal files</li>
+          </ul>
+
+          <h2>Data Stored on Your Device</h2>
+          <p>
+            The app stores the following information locally in the app's private
+            storage (SharedPreferences) on your Android device:
+          </p>
+          <ul>
+            <li><strong>Enrolled challenge-response pair</strong> — A random challenge
+              and the corresponding HMAC-SHA1 response from your YubiKey, used to verify
+              future authentication attempts.</li>
+            <li><strong>Selected YubiKey slot</strong> — Whether Slot 1 or Slot 2 is
+              configured for challenge-response.</li>
+            <li><strong>Protected package names</strong> — The list of Android app
+              package names you've chosen to protect.</li>
+          </ul>
+          <p>
+            This data never leaves your device. It is stored in the app's private
+            storage directory, which is not accessible to other apps.
+          </p>
+
+          <h2>Analytics &amp; Tracking</h2>
+          <p>
+            Yubi AppGate does <strong>not</strong> include any analytics SDKs,
+            crash reporting services, advertising frameworks, or tracking libraries.
+            No data is sent to third-party services.
+          </p>
+          <div class="prose-callout">
+            If optional analytics are added in a future version, they will be clearly
+            disclosed, opt-in only, and this policy will be updated accordingly.
+          </div>
+
+          <h2>Network Access</h2>
+          <p>
+            The app does not require internet access for its core functionality.
+            All authentication happens offline between your device and the physical
+            YubiKey. The only network activity that may occur is related to Google
+            Play licensing verification, which is handled by the Android system.
+          </p>
+
+          <h2>Accessibility Service</h2>
+          <p>
+            If you enable the optional accessibility service for system-wide
+            protection, the service monitors which app is in the foreground by
+            observing window change events. It does <strong>not</strong>:
+          </p>
+          <ul>
+            <li>Read or record screen content</li>
+            <li>Access text fields or keyboard input</li>
+            <li>Interact with or modify other apps</li>
+            <li>Transmit any information off the device</li>
+          </ul>
+          <p>
+            The service solely observes the foreground package name to determine
+            whether a protected app has been opened.
+          </p>
+
+          <h2>Device Administrator</h2>
+          <p>
+            The optional device administrator feature only uses the "force-lock"
+            policy to prevent uninstallation. It does not access, manage, or
+            reset any device data.
+          </p>
+
+          <h2>Children's Privacy</h2>
+          <p>
+            The app is not directed at children under 13 and does not knowingly
+            collect information from children.
+          </p>
+
+          <h2>Data Deletion</h2>
+          <p>
+            All data stored by the app can be removed at any time by:
+          </p>
+          <ul>
+            <li>Using the "Reset enrollment" option within the app</li>
+            <li>Clearing the app's data via Android Settings</li>
+            <li>Uninstalling the app</li>
+          </ul>
+
+          <h2>Third-Party Services</h2>
+          <p>
+            The app is distributed via the Google Play Store. Google's privacy
+            policy applies to the distribution platform. Yubi AppGate itself does
+            not integrate with any third-party services beyond the Android system
+            APIs required for its functionality.
+          </p>
+
+          <h2>Changes to This Policy</h2>
+          <p>
+            We may update this Privacy Policy from time to time. Changes will be
+            posted on this page with an updated "Last updated" date. We encourage
+            you to review this policy periodically.
+          </p>
+
+          <h2>Contact</h2>
+          <p>
+            If you have questions about this Privacy Policy, please contact us at:
+          </p>
+          <p>
+            <a href="mailto:appatalks@closetemail.com">appatalks@closetemail.com</a>
+          </p>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p class="footer-copy">&copy; 2026 Yubi AppGate. All rights reserved.</p>
+        <ul class="footer-links">
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="security.html">Security</a></li>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="https://github.com/appatalks/Yubi-AppGate" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

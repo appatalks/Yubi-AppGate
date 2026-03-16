@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How It Works – Yubi AppGate</title>
+  <meta name="description" content="Learn how Yubi AppGate protects your Android apps with YubiKey hardware authentication in four simple steps.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon" aria-hidden="true">🔐</span>
+        Yubi AppGate
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="how-it-works.html">How It Works</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="security.html">Security</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="page-content">
+    <div class="container">
+
+      <div class="section-header fade-in">
+        <p class="section-label">How It Works</p>
+        <h1>Four Steps to Hardware-Backed Protection</h1>
+        <p>From install to unlock, everything is designed to be fast, offline, and secure.</p>
+      </div>
+
+      <!-- Steps -->
+      <section class="section">
+        <div class="steps">
+
+          <div class="step fade-in">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3>Install Yubi AppGate</h3>
+              <p>
+                Download the app from Google Play and open it. No account creation
+                required — the app is fully offline. On first launch you'll see the
+                Setup tab with enrollment and service status.
+              </p>
+            </div>
+          </div>
+
+          <div class="step fade-in">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3>Enroll Your YubiKey</h3>
+              <p>
+                Your YubiKey must have an HMAC-SHA1 challenge-response secret
+                programmed in Slot&nbsp;1 or Slot&nbsp;2 (via
+                <a href="https://www.yubico.com/support/download/yubikey-manager/" target="_blank" rel="noopener">YubiKey Manager</a>).
+                Select the matching slot in the app, then tap your key over NFC or
+                connect via USB-C. The app sends a test challenge and records the
+                hardware response — this is a <strong>Trust On First Use (TOFU)</strong>
+                enrollment. The raw secret is never entered into the app.
+              </p>
+            </div>
+          </div>
+
+          <div class="step fade-in">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3>Choose Apps to Protect</h3>
+              <p>
+                Switch to the Apps tab to see all installed apps. Toggle the
+                protection switch on any app you want to lock behind your YubiKey.
+                The free version supports up to 2 protected apps; Pro unlocks
+                unlimited protection.
+              </p>
+            </div>
+          </div>
+
+          <div class="step fade-in">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h3>Authenticate &amp; Unlock</h3>
+              <p>
+                When a protected app is opened — from any launcher, recent apps, or
+                deep link — a lock screen appears. Tap your YubiKey over NFC or
+                press the USB button. The app generates a fresh challenge, sends it
+                to the YubiKey, and verifies the response against the enrolled
+                identity. If it matches, the app unlocks instantly. A short cooldown
+                lets you switch back without re-tapping every time.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- What you need -->
+      <section class="section fade-in">
+        <div class="section-header">
+          <h2>What You Need</h2>
+        </div>
+        <div class="card-grid" style="max-width:720px;margin:0 auto;">
+          <div class="card">
+            <div class="card-icon">📱</div>
+            <h3>Android Device</h3>
+            <p>Android 7.0 (Nougat) or later. NFC-capable device recommended; USB-C also supported.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🔑</div>
+            <h3>YubiKey</h3>
+            <p>Any YubiKey with HMAC-SHA1 challenge-response support (YubiKey 5 series, YubiKey 5C NFC, etc.).</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Optional: Enable service -->
+      <section class="section fade-in">
+        <div class="prose">
+          <h2>Optional: Enable System-wide Protection</h2>
+          <p>
+            By default, Yubi AppGate gates apps launched from within the app. For
+            <strong>system-wide</strong> protection — blocking protected apps no matter
+            how they're launched — enable the app's accessibility service in
+            <em>Settings → Accessibility → Yubi AppGate</em>.
+          </p>
+          <div class="prose-callout">
+            <strong>Why an accessibility service?</strong> Android does not provide an
+            API for third-party apps to intercept app launches. The accessibility service
+            monitors foreground window changes to detect when a protected app appears,
+            then overlays the lock screen. The service does not read or modify screen
+            content — it only observes package names.
+          </div>
+          <p>
+            You can also enable <strong>uninstall protection</strong> via Device
+            Administrator mode, which prevents the app from being removed without
+            first entering your phone's screen lock.
+          </p>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <div class="cta-banner fade-in">
+        <h2>Get Started Now</h2>
+        <p>Download from Google Play, enroll your YubiKey, and lock your first app in under a minute.</p>
+        <a href="https://play.google.com/store/apps/details?id=com.appatalks.yubi_appgate" class="btn btn-primary" target="_blank" rel="noopener">
+          ▶ Get it on Google Play
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p class="footer-copy">&copy; 2026 Yubi AppGate. All rights reserved.</p>
+        <ul class="footer-links">
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="security.html">Security</a></li>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="https://github.com/appatalks/Yubi-AppGate" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

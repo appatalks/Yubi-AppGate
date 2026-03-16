@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support – Yubi AppGate</title>
+  <meta name="description" content="Get help with Yubi AppGate. Frequently asked questions, troubleshooting, and contact information.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon" aria-hidden="true">🔐</span>
+        Yubi AppGate
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="how-it-works.html">How It Works</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="security.html">Security</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="page-content">
+    <div class="container">
+
+      <div class="section-header fade-in">
+        <p class="section-label">Support</p>
+        <h1>Help &amp; FAQ</h1>
+        <p>Find answers to common questions and troubleshooting tips below.</p>
+      </div>
+
+      <!-- FAQ -->
+      <section class="section">
+        <div class="faq-list fade-in">
+
+          <div class="faq-item">
+            <button class="faq-question">
+              Which YubiKeys are compatible?
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Any YubiKey that supports HMAC-SHA1 challenge-response works with Yubi
+                AppGate. This includes the <strong>YubiKey 5 series</strong> (5 NFC,
+                5C, 5C NFC, 5Ci, 5C Nano), the <strong>YubiKey 5 FIPS series</strong>, and older
+                YubiKey 4 models. The key must have an HMAC-SHA1 secret programmed
+                in Slot 1 or Slot 2 using YubiKey Manager (<code>ykman</code>) or the
+                YubiKey Personalization Tool.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              How do I program my YubiKey for HMAC-SHA1?
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <ol>
+                  <li>Install <a href="https://www.yubico.com/support/download/yubikey-manager/" target="_blank" rel="noopener">YubiKey Manager</a> on your computer.</li>
+                  <li>Insert your YubiKey and open YubiKey Manager.</li>
+                  <li>Navigate to <strong>Applications → OTP</strong>.</li>
+                  <li>Select a slot (Slot 1 or Slot 2) and choose <strong>Challenge-Response</strong>.</li>
+                  <li>Select <strong>HMAC-SHA1</strong> and either generate a secret or enter your own 20-byte hex secret.</li>
+                  <li>Click <strong>Finish</strong>.</li>
+                </ol>
+                <p>Then enroll the same slot in the Yubi AppGate app by tapping or connecting your YubiKey.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              My NFC tap isn't being detected
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <ul>
+                  <li>Make sure NFC is enabled in your phone's Settings.</li>
+                  <li>Hold the YubiKey flat against the back of your phone, near the NFC antenna (usually upper-center).</li>
+                  <li>Keep the key steady for 1–2 seconds — don't tap and pull away too quickly.</li>
+                  <li>Remove any thick phone case that might block NFC signals.</li>
+                  <li>Check the transport status in the app's Setup tab to confirm NFC shows "Ready."</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              USB YubiKey is not detected
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <ul>
+                  <li>Ensure your phone supports USB OTG (On-The-Go).</li>
+                  <li>Plug the YubiKey directly into the USB-C port (not through a hub).</li>
+                  <li>If prompted for USB permission, tap <strong>Allow</strong>.</li>
+                  <li>Make sure CCID mode is enabled on your YubiKey (it is by default). You can verify via YubiKey Manager under <strong>Interfaces</strong>.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              Authentication fails ("response did not match")
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>This means the YubiKey's HMAC-SHA1 response doesn't match the enrolled identity. Common causes:</p>
+                <ul>
+                  <li><strong>Wrong slot selected</strong> — Make sure the slot in the app matches the slot where you programmed the HMAC-SHA1 secret.</li>
+                  <li><strong>Secret was re-programmed</strong> — If you reprogrammed the YubiKey's secret after enrollment, you need to reset enrollment in the app and re-enroll.</li>
+                  <li><strong>Different YubiKey</strong> — You're tapping a different YubiKey than the one originally enrolled.</li>
+                </ul>
+                <p>To fix: go to <strong>Setup → Reset enrollment</strong>, then re-enroll with the correct YubiKey and slot.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              How do I enable system-wide protection?
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>
+                  Go to <strong>Setup</strong> and tap <strong>Open Accessibility Settings</strong>.
+                  Find <strong>Yubi AppGate</strong> in the list and enable it. Once active,
+                  any protected app will show the lock screen no matter how it's opened
+                  (home screen, recent apps, deep links, etc.).
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              How do I prevent the app from being uninstalled?
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>
+                  In the Setup tab, tap <strong>Enable Uninstall Protection</strong>. This
+                  activates device administrator mode, which requires your phone's screen
+                  lock to deactivate before the app can be uninstalled.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              How many apps can I protect for free?
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>
+                  The free version lets you protect up to <strong>2 apps</strong>.
+                  Upgrade to Pro for unlimited app locks.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              Does the app need internet access?
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>
+                  No. Yubi AppGate operates entirely offline. No internet connection is
+                  needed for enrollment or authentication. The app has no network
+                  permissions beyond what the Play Store requires for license verification.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Troubleshooting -->
+      <section class="section fade-in">
+        <div class="prose">
+          <h2>Troubleshooting Tips</h2>
+
+          <h3>The lock screen doesn't appear when I open a protected app</h3>
+          <ul>
+            <li>Verify the accessibility service is enabled (<strong>Setup → Open Accessibility Settings</strong>).</li>
+            <li>Some Android manufacturers aggressively kill background services. Check your phone's battery optimization settings and exclude Yubi AppGate.</li>
+            <li>On some devices, you may need to allow "Display over other apps" in system settings.</li>
+          </ul>
+
+          <h3>YubiKey error: "Failed to select OTP applet"</h3>
+          <ul>
+            <li>The OTP applet may be disabled on your YubiKey. Open YubiKey Manager, go to <strong>Interfaces</strong>, and ensure OTP is enabled for NFC and/or USB.</li>
+          </ul>
+
+          <h3>App locked itself — how do I get back in?</h3>
+          <ul>
+            <li>Yubi AppGate protects itself once a YubiKey is enrolled. Simply tap your enrolled YubiKey to authenticate and access the app.</li>
+            <li>If you've lost your YubiKey, you can clear the app's data via <strong>Settings → Apps → Yubi AppGate → Clear Data</strong> to reset enrollment. This will remove all protection settings.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section class="section fade-in">
+        <div class="section-header">
+          <h2>Contact Support</h2>
+          <p>Still need help? Reach out and we'll get back to you.</p>
+        </div>
+        <div class="card" style="max-width:480px;margin:0 auto;text-align:center;">
+          <div class="card-icon" style="margin:0 auto 1rem;">✉️</div>
+          <h3>Email Support</h3>
+          <p>
+            <a href="mailto:appatalks@closetemail.com">appatalks@closetemail.com</a>
+          </p>
+          <p style="font-size:0.88rem;color:var(--text-muted);">We typically respond within 48 hours.</p>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p class="footer-copy">&copy; 2026 Yubi AppGate. All rights reserved.</p>
+        <ul class="footer-links">
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="security.html">Security</a></li>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="https://github.com/appatalks/Yubi-AppGate" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

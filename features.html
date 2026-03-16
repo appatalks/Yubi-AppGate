@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Features – Yubi AppGate</title>
+  <meta name="description" content="Explore Yubi AppGate features: YubiKey hardware authentication, NFC and USB-C support, system-wide app protection, and complete privacy.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon" aria-hidden="true">🔐</span>
+        Yubi AppGate
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="how-it-works.html">How It Works</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="security.html">Security</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="page-content">
+    <div class="container">
+
+      <!-- Page header -->
+      <div class="section-header fade-in">
+        <p class="section-label">Features</p>
+        <h1>Built for Hardware Security</h1>
+        <p>Yubi AppGate brings real cryptographic authentication to Android app locking — powered by your YubiKey.</p>
+      </div>
+
+      <!-- Feature: Hardware Key -->
+      <section class="section fade-in">
+        <div class="card" style="max-width:720px;margin:0 auto;">
+          <div class="card-icon">🔑</div>
+          <h2>Hardware Security Key Protection</h2>
+          <p>
+            Unlike PIN or pattern-based app lockers, Yubi AppGate relies on a physical
+            hardware security key&nbsp;&mdash; your YubiKey. The app uses the
+            <strong>HMAC-SHA1 challenge-response</strong> protocol, where a random
+            cryptographic challenge is sent to the YubiKey and the key computes a
+            response using a secret stored in its tamper-resistant secure element.
+          </p>
+          <p>
+            This means authentication cannot be bypassed by guessing, shoulder-surfing,
+            or screen recording. You need the physical key&nbsp;&mdash; period.
+          </p>
+        </div>
+      </section>
+
+      <!-- Feature: Passwordless -->
+      <section class="section fade-in">
+        <div class="card" style="max-width:720px;margin:0 auto;">
+          <div class="card-icon">⚡</div>
+          <h2>Passwordless Authentication</h2>
+          <p>
+            There are no passwords to type, no PINs to remember, and no biometrics to
+            enroll. When a protected app is launched, Yubi AppGate presents a lock screen
+            and waits for your YubiKey. One tap (NFC) or one click
+            (USB) and the challenge-response handshake completes in under a second.
+          </p>
+          <p>
+            This is true passwordless security: possession of the hardware key is the
+            only factor required.
+          </p>
+        </div>
+      </section>
+
+      <!-- Feature: NFC & USB -->
+      <section class="section fade-in">
+        <div class="card" style="max-width:720px;margin:0 auto;">
+          <div class="card-icon">📡</div>
+          <h2>NFC &amp; USB-C Connection</h2>
+          <p>
+            Yubi AppGate supports both connection methods offered by modern YubiKeys:
+          </p>
+          <ul style="padding-left:1.5em;color:var(--text-secondary);margin-top:0.5em;">
+            <li><strong>NFC</strong>&nbsp;&mdash; Hold your YubiKey against the back of your phone. The app uses Android's reader mode to communicate via ISO-DEP (ISO&nbsp;7816), selecting the OTP applet and executing challenge-response directly.</li>
+            <li style="margin-top:0.5em;"><strong>USB-C</strong>&nbsp;&mdash; Plug your YubiKey into the USB-C port. The app communicates over the CCID (smart card) interface, providing the same secure challenge-response without NFC.</li>
+          </ul>
+          <p class="mt-2">
+            Transport status is shown in-app so you always know whether your key is detected and ready.
+          </p>
+        </div>
+      </section>
+
+      <!-- Feature: Privacy -->
+      <section class="section fade-in">
+        <div class="card" style="max-width:720px;margin:0 auto;">
+          <div class="card-icon">🚫</div>
+          <h2>No Cloud Accounts Required</h2>
+          <p>
+            Yubi AppGate is fully offline. There are no accounts to create, no
+            cloud services involved, and no data leaves your device. Enrollment happens
+            locally: the app sends a challenge to your YubiKey, records the response,
+            and uses that pair for future verification.
+          </p>
+          <p>
+            Your YubiKey's shared secret is never transmitted over the network.
+            Authentication is verified entirely on-device.
+          </p>
+        </div>
+      </section>
+
+      <!-- Feature: System-wide -->
+      <section class="section fade-in">
+        <div class="card" style="max-width:720px;margin:0 auto;">
+          <div class="card-icon">🛡️</div>
+          <h2>System-wide App Protection</h2>
+          <p>
+            With the accessibility service enabled, Yubi AppGate monitors which app
+            is in the foreground. When a protected app is detected — whether launched
+            from the home screen, recent apps, or another app — the lock screen
+            appears immediately, requiring YubiKey authentication before the app
+            becomes usable.
+          </p>
+          <p>
+            After a successful unlock, a short cooldown period allows you to switch
+            back without re-authenticating every time.
+          </p>
+        </div>
+      </section>
+
+      <!-- Feature: Uninstall Protection -->
+      <section class="section fade-in">
+        <div class="card" style="max-width:720px;margin:0 auto;">
+          <div class="card-icon">🧩</div>
+          <h2>Uninstall Protection</h2>
+          <p>
+            An optional device administrator mode prevents the app from being
+            silently uninstalled. Deactivating the device admin requires the
+            phone's screen lock, adding another layer of defense against someone
+            with temporary physical access to your device.
+          </p>
+        </div>
+      </section>
+
+      <!-- Free vs Pro -->
+      <section class="section fade-in">
+        <div class="section-header">
+          <p class="section-label">Plans</p>
+          <h2>Free &amp; Pro</h2>
+        </div>
+        <div class="pricing-grid">
+          <div class="pricing-card">
+            <h3>Free</h3>
+            <div class="pricing-price">$0</div>
+            <ul class="pricing-features">
+              <li><span class="check">✓</span> Lock up to 2 apps</li>
+              <li><span class="check">✓</span> NFC &amp; USB-C</li>
+              <li><span class="check">✓</span> System-wide protection</li>
+              <li><span class="check">✓</span> Uninstall protection</li>
+              <li><span class="dash">—</span> Unlimited locks</li>
+            </ul>
+          </div>
+          <div class="pricing-card featured">
+            <h3>Pro</h3>
+            <div class="pricing-price">$6.99</div>
+            <ul class="pricing-features">
+              <li><span class="check">✓</span> <strong>Unlimited</strong> app locks</li>
+              <li><span class="check">✓</span> NFC &amp; USB-C</li>
+              <li><span class="check">✓</span> System-wide protection</li>
+              <li><span class="check">✓</span> Uninstall protection</li>
+              <li><span class="check">✓</span> Priority support</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <div class="cta-banner fade-in">
+        <h2>Ready to Get Started?</h2>
+        <p>Download Yubi AppGate from Google Play and protect your apps today.</p>
+        <a href="https://play.google.com/store/apps/details?id=com.appatalks.yubi_appgate" class="btn btn-primary" target="_blank" rel="noopener">
+          ▶ Get it on Google Play
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p class="footer-copy">&copy; 2026 Yubi AppGate. All rights reserved.</p>
+        <ul class="footer-links">
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="security.html">Security</a></li>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="https://github.com/appatalks/Yubi-AppGate" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

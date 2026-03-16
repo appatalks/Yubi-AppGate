@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Security – Yubi AppGate</title>
+  <meta name="description" content="Learn about Yubi AppGate's security architecture: local HMAC-SHA1 challenge-response, on-device verification, and zero remote credential storage.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon" aria-hidden="true">🔐</span>
+        Yubi AppGate
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="how-it-works.html">How It Works</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="security.html">Security</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="page-content">
+    <div class="container">
+
+      <div class="section-header fade-in">
+        <p class="section-label">Security</p>
+        <h1>Authentication Architecture</h1>
+        <p>How Yubi AppGate protects your apps with hardware-backed cryptographic verification.</p>
+      </div>
+
+      <!-- Architecture overview -->
+      <section class="section">
+        <div class="prose fade-in">
+
+          <h2>HMAC-SHA1 Challenge-Response</h2>
+          <p>
+            Yubi AppGate uses the <strong>HMAC-SHA1 challenge-response</strong> protocol
+            to authenticate your YubiKey. This is the same proven mechanism used in
+            enterprise security, full-disk encryption tools, and password managers.
+          </p>
+          <p>Here's how a single authentication attempt works:</p>
+          <ol>
+            <li>The app generates a cryptographically random challenge (up to 64 bytes).</li>
+            <li>The challenge is sent to the YubiKey over NFC or USB.</li>
+            <li>The YubiKey computes an HMAC-SHA1 using the challenge and the secret
+              stored in its tamper-resistant secure element.</li>
+            <li>The 20-byte response is sent back to the app.</li>
+            <li>The app compares the response against the enrolled identity.</li>
+            <li>If the response matches, authentication succeeds.</li>
+          </ol>
+
+          <div class="arch-diagram" role="img" aria-label="Authentication flow diagram">
+┌──────────────┐         challenge         ┌──────────────┐
+│              │  ──────────────────────▶   │              │
+│  Yubi AppGate │                           │   YubiKey    │
+│  (on device) │   ◀──────────────────────  │  (hardware)  │
+│              │     HMAC-SHA1 response     │              │
+└──────────────┘                            └──────────────┘
+       │
+       ▼
+  Compare with
+  enrolled response
+       │
+   ┌───┴───┐
+   │ Match │ ──▶  Unlock app
+   └───┬───┘
+       │
+   No match ──▶  Access denied</div>
+
+          <h2>Trust On First Use (TOFU) Enrollment</h2>
+          <p>
+            During enrollment, the app sends a random challenge to your YubiKey and
+            records the response. This challenge-response pair becomes the enrolled
+            identity. On subsequent authentication attempts, the app replays the same
+            challenge and verifies that the YubiKey produces the same response.
+          </p>
+          <p>
+            This is a <strong>Trust On First Use</strong> model — the first YubiKey
+            you enroll becomes the trusted key. To switch keys, you reset enrollment
+            and re-enroll with a different YubiKey.
+          </p>
+
+          <h2>All Authentication Is Local</h2>
+          <p>
+            The entire authentication flow happens on your device:
+          </p>
+          <ul>
+            <li>The challenge is generated locally using <code>java.security.SecureRandom</code>.</li>
+            <li>Communication with the YubiKey happens directly over NFC (ISO-DEP / ISO 7816) or USB (CCID smart card interface).</li>
+            <li>Response verification is performed on-device.</li>
+            <li><strong>No network requests are made during authentication.</strong></li>
+          </ul>
+
+          <div class="prose-callout">
+            There is no server, no API, and no cloud component involved in the
+            authentication process. If your phone is in airplane mode, authentication
+            still works.
+          </div>
+
+          <h2>No Credentials Stored Remotely</h2>
+          <p>
+            Yubi AppGate does not store any credentials, secrets, or authentication
+            data on remote servers. All enrollment data (the challenge-response pair
+            and slot selection) is stored in the app's private SharedPreferences on
+            your Android device, accessible only to the app itself.
+          </p>
+          <p>
+            The YubiKey's HMAC-SHA1 shared secret never leaves the hardware key's
+            secure element. The app never has access to the raw secret — it only
+            sends challenges and receives responses.
+          </p>
+
+          <h2>Transport Security</h2>
+          <h3>NFC</h3>
+          <p>
+            The app uses Android's <strong>reader mode</strong> to communicate with
+            the YubiKey over NFC. It selects the YubiKey's OTP applet via its
+            Application Identifier (AID) and sends the challenge-response APDU
+            directly. No NDEF records are read or written.
+          </p>
+
+          <h3>USB</h3>
+          <p>
+            Over USB, the app communicates via the <strong>CCID (smart card)</strong>
+            interface. It powers on the card, selects the OTP applet, and sends the
+            same challenge APDU. USB permission is requested via the standard Android
+            USB host API.
+          </p>
+
+          <h2>Self-Protection</h2>
+          <p>
+            Once a YubiKey is enrolled, Yubi AppGate protects itself — opening the
+            app requires YubiKey authentication. This prevents someone from
+            modifying your protection settings without your hardware key.
+          </p>
+
+          <h2>Uninstall Protection</h2>
+          <p>
+            The optional device administrator mode uses Android's
+            <code>DevicePolicyManager</code> to prevent uninstallation. Deactivating
+            the device admin requires your phone's screen lock (PIN, pattern, or
+            biometric), adding a second layer of defense.
+          </p>
+
+          <h2>Security Considerations</h2>
+          <p>
+            As with any security tool, there are important considerations:
+          </p>
+          <ul>
+            <li><strong>Physical key loss</strong> — If you lose your YubiKey, you can
+              still clear the app's data via Android Settings to remove protection. This
+              is by design, as Android does not allow third-party apps to make the device
+              permanently inaccessible.</li>
+            <li><strong>Rooted devices</strong> — On a rooted device, any app can
+              potentially access another app's private storage. For maximum security,
+              use Yubi AppGate on a non-rooted device.</li>
+            <li><strong>Accessibility service trust</strong> — The accessibility service
+              requires user consent. It only observes foreground package names and does
+              not read screen content.</li>
+          </ul>
+
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <div class="cta-banner fade-in">
+        <h2>Questions About Security?</h2>
+        <p>If you have security concerns or want to report a vulnerability, please reach out.</p>
+        <a href="mailto:appatalks@closetemail.com" class="btn btn-primary">
+          ✉ Contact Us
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p class="footer-copy">&copy; 2026 Yubi AppGate. All rights reserved.</p>
+        <ul class="footer-links">
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="security.html">Security</a></li>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="https://github.com/appatalks/Yubi-AppGate" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
