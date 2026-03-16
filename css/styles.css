@@ -90,11 +90,11 @@ p { margin-bottom: 1em; }
   gap: 0.5rem;
 }
 
-.nav-logo .logo-icon {
+.nav-logo .logo-icon,
+.nav-logo-img {
   width: 28px;
   height: 28px;
   border-radius: 6px;
-  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
   display: flex;
   align-items: center;
   justify-content: center;

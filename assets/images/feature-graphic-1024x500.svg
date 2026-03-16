@@ -109,8 +109,8 @@
   <text x="400" y="69" font-family="'DejaVu Sans', 'Segoe UI', Roboto, Arial, sans-serif" font-weight="bold" font-size="13" fill="#00d4ff" letter-spacing="0.5">HARDWARE-BACKED SECURITY</text>
 
   <!-- Title -->
-  <text y="140" font-family="'DejaVu Sans', 'Segoe UI', Roboto, Arial, sans-serif" font-weight="bold" font-size="56">
-    <tspan x="390" fill="#00d4ff">Yubi </tspan><tspan fill="#e6e6ee">AppGate</tspan>
+  <text x="390" y="140" font-family="'DejaVu Sans', 'Segoe UI', Roboto, Arial, sans-serif" font-weight="bold" font-size="52">
+    <tspan fill="#00d4ff">Yubi </tspan><tspan fill="#e6e6ee">AppGate</tspan>
   </text>
 
   <!-- Subtitle -->

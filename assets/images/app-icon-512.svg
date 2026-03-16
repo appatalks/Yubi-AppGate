@@ -69,12 +69,11 @@
   <!-- Gradient divider line -->
   <line x1="156" y1="358" x2="356" y2="358" stroke="url(#dividerFade)" stroke-width="1.5"/>
 
-  <!-- Title: YUBI -->
-  <text x="118" y="408" font-family="'DejaVu Sans', 'Segoe UI', Roboto, Arial, sans-serif" font-weight="bold" font-size="52" fill="#00d4ff">YUBI</text>
-
-  <!-- Title: APPGATE -->
-  <text x="262" y="408" font-family="'DejaVu Sans', 'Segoe UI', Roboto, Arial, sans-serif" font-weight="bold" font-size="52" fill="#e6e6ee">APPGATE</text>
+  <!-- Title -->
+  <text x="256" y="408" text-anchor="middle" font-family="'DejaVu Sans', 'Segoe UI', Roboto, Arial, sans-serif" font-weight="bold" font-size="48">
+    <tspan fill="#00d4ff">YUBI </tspan><tspan fill="#e6e6ee">APPGATE</tspan>
+  </text>
 
   <!-- Tagline -->
-  <text x="256" y="462" text-anchor="middle" font-family="'DejaVu Sans', 'Segoe UI', Roboto, Arial, sans-serif" font-weight="normal" font-size="21" fill="#787896">Hardware App Lock</text>
+  <text x="256" y="458" text-anchor="middle" font-family="'DejaVu Sans', 'Segoe UI', Roboto, Arial, sans-serif" font-weight="normal" font-size="21" fill="#787896">Hardware App Lock</text>
 </svg>
