@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <!-- Radial glows -->
+    <radialGradient id="glowCyan" cx="30%" cy="25%" r="70%">
+      <stop offset="0%" stop-color="#00d4ff" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#00d4ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowPurple" cx="70%" cy="75%" r="60%">
+      <stop offset="0%" stop-color="#9b59ff" stop-opacity="0.09"/>
+      <stop offset="100%" stop-color="#9b59ff" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Shield gradient fill -->
+    <linearGradient id="shieldFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0c1c2a" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#06060c" stop-opacity="0.95"/>
+    </linearGradient>
+    <!-- Divider line fade -->
+    <linearGradient id="dividerFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00d4ff" stop-opacity="0.7"/>
+      <stop offset="50%" stop-color="#00d4ff" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#00d4ff" stop-opacity="0"/>
+    </linearGradient>
+    <!-- Shield glow filter -->
+    <filter id="shieldGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" fill="#06060c"/>
+
+  <!-- Ambient glows -->
+  <rect width="512" height="512" fill="url(#glowCyan)"/>
+  <rect width="512" height="512" fill="url(#glowPurple)"/>
+
+  <!-- Rounded card background -->
+  <rect x="8" y="8" width="496" height="496" rx="100" ry="100" fill="#0e0e1a" fill-opacity="0.94"/>
+
+  <!-- Shield shape -->
+  <g filter="url(#shieldGlow)">
+    <path d="
+      M 256 70
+      C 290 62, 330 68, 347 78
+      L 347 137
+      C 347 180, 330 230, 300 272
+      C 280 300, 260 320, 256 330
+      C 252 320, 232 300, 212 272
+      C 182 230, 165 180, 165 137
+      L 165 78
+      C 182 68, 222 62, 256 70
+      Z
+    " fill="url(#shieldFill)" stroke="#00d4ff" stroke-width="4.5" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Padlock shackle -->
+  <path d="M 235 160 C 235 135, 235 120, 256 120 C 277 120, 277 135, 277 160"
+        fill="none" stroke="#00d4ff" stroke-width="8" stroke-linecap="round"/>
+
+  <!-- Padlock body -->
+  <rect x="225" y="158" width="62" height="50" rx="8" ry="8" fill="#00d4ff"/>
+
+  <!-- Keyhole circle -->
+  <circle cx="256" cy="178" r="7" fill="#06060c"/>
+
+  <!-- Keyhole slit -->
+  <rect x="253.5" y="183" width="5" height="14" rx="2" fill="#06060c"/>
+
+  <!-- Gradient divider line -->
+  <line x1="156" y1="358" x2="356" y2="358" stroke="url(#dividerFade)" stroke-width="1.5"/>
+
+  <!-- Title: YUBI -->
+  <text x="118" y="408" font-family="'DejaVu Sans', 'Segoe UI', Roboto, Arial, sans-serif" font-weight="bold" font-size="52" fill="#00d4ff">YUBI</text>
+
+  <!-- Title: APPGATE -->
+  <text x="262" y="408" font-family="'DejaVu Sans', 'Segoe UI', Roboto, Arial, sans-serif" font-weight="bold" font-size="52" fill="#e6e6ee">APPGATE</text>
+
+  <!-- Tagline -->
+  <text x="256" y="462" text-anchor="middle" font-family="'DejaVu Sans', 'Segoe UI', Roboto, Arial, sans-serif" font-weight="normal" font-size="21" fill="#787896">Hardware App Lock</text>
+</svg>

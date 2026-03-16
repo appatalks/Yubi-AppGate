@@ -226,6 +226,44 @@ p { margin-bottom: 1em; }
   flex-wrap: wrap;
 }
 
+/* ─── Hero / Page Icon & Banner ─────────────────────────────────── */
+.hero-icon {
+  margin-bottom: 1.5rem;
+}
+
+.hero-icon img {
+  width: 140px;
+  height: 140px;
+  border-radius: 28px;
+  box-shadow: var(--glow-cyan), 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+.page-icon {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.page-icon img {
+  width: 80px;
+  height: 80px;
+  border-radius: 18px;
+  box-shadow: var(--glow-cyan), 0 2px 12px rgba(0, 0, 0, 0.3);
+}
+
+.page-banner {
+  margin-bottom: 2.5rem;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+}
+
+.page-banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* ─── Buttons ───────────────────────────────────────────────────── */
 .btn {
   display: inline-flex;

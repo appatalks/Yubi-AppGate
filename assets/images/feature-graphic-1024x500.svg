@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="500" viewBox="0 0 1024 500">
+  <defs>
+    <!-- Radial glows -->
+    <radialGradient id="fgGlowCyan" cx="15%" cy="40%" r="40%">
+      <stop offset="0%" stop-color="#00d4ff" stop-opacity="0.11"/>
+      <stop offset="100%" stop-color="#00d4ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="fgGlowPurple" cx="85%" cy="50%" r="35%">
+      <stop offset="0%" stop-color="#9b59ff" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#9b59ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="fgGlowGreen" cx="50%" cy="100%" r="40%">
+      <stop offset="0%" stop-color="#00ff88" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#00ff88" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Shield fill -->
+    <linearGradient id="fgShieldFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a1826" stop-opacity="0.88"/>
+      <stop offset="100%" stop-color="#06060c" stop-opacity="0.92"/>
+    </linearGradient>
+    <!-- Top accent line -->
+    <linearGradient id="topLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00d4ff"/>
+      <stop offset="100%" stop-color="#9b59ff"/>
+    </linearGradient>
+    <!-- Bottom accent line -->
+    <linearGradient id="bottomLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00ff88"/>
+      <stop offset="100%" stop-color="#00d4ff"/>
+    </linearGradient>
+    <!-- Divider fade -->
+    <linearGradient id="fgDivider" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00d4ff" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#00d4ff" stop-opacity="0"/>
+    </linearGradient>
+    <!-- Shield glow -->
+    <filter id="fgShieldGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="15" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <!-- Icon backglow -->
+    <radialGradient id="iconGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00d4ff" stop-opacity="0.14"/>
+      <stop offset="70%" stop-color="#00d4ff" stop-opacity="0.03"/>
+      <stop offset="100%" stop-color="#00d4ff" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Dot pattern -->
+    <pattern id="dotGrid" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
+      <rect x="0" y="0" width="1.5" height="1.5" rx="0.5" fill="#3c3c55" fill-opacity="0.14"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1024" height="500" fill="#06060c"/>
+
+  <!-- Ambient glows -->
+  <rect width="1024" height="500" fill="url(#fgGlowCyan)"/>
+  <rect width="1024" height="500" fill="url(#fgGlowPurple)"/>
+  <rect width="1024" height="500" fill="url(#fgGlowGreen)"/>
+
+  <!-- Dot grid -->
+  <rect width="1024" height="500" fill="url(#dotGrid)"/>
+
+  <!-- Top accent line -->
+  <rect x="0" y="0" width="1024" height="2" fill="url(#topLine)" opacity="0.7"/>
+
+  <!-- Bottom accent line -->
+  <rect x="0" y="498" width="1024" height="2" fill="url(#bottomLine)" opacity="0.7"/>
+
+  <!-- === Left side: Shield icon === -->
+  <g transform="translate(184, 230)">
+    <!-- Backglow circle -->
+    <circle cx="0" cy="0" r="140" fill="url(#iconGlow)"/>
+
+    <!-- Shield -->
+    <g filter="url(#fgShieldGlow)">
+      <path d="
+        M 0 -88
+        C 24 -94, 52 -89, 66 -82
+        L 66 -35
+        C 66 0, 52 42, 30 72
+        C 16 92, 4 104, 0 110
+        C -4 104, -16 92, -30 72
+        C -52 42, -66 0, -66 -35
+        L -66 -82
+        C -52 -89, -24 -94, 0 -88
+        Z
+      " fill="url(#fgShieldFill)" stroke="#00d4ff" stroke-width="3.5" stroke-linejoin="round"/>
+    </g>
+
+    <!-- Padlock shackle -->
+    <path d="M -15 -26 C -15 -46, -15 -56, 0 -56 C 15 -56, 15 -46, 15 -26"
+          fill="none" stroke="#00d4ff" stroke-width="6" stroke-linecap="round"/>
+
+    <!-- Padlock body -->
+    <rect x="-22" y="-28" width="44" height="36" rx="6" ry="6" fill="#00d4ff"/>
+
+    <!-- Keyhole circle -->
+    <circle cx="0" cy="-14" r="5" fill="#06060c"/>
+
+    <!-- Keyhole slit -->
+    <rect x="-2" y="-10" width="4" height="10" rx="1.5" fill="#06060c"/>
+  </g>
+
+  <!-- === Right side: Text content === -->
+
+  <!-- Badge pill -->
+  <rect x="390" y="50" width="270" height="28" rx="14" fill="#00d4ff" fill-opacity="0.08" stroke="#00d4ff" stroke-opacity="0.2" stroke-width="1"/>
+  <text x="400" y="69" font-family="'DejaVu Sans', 'Segoe UI', Roboto, Arial, sans-serif" font-weight="bold" font-size="13" fill="#00d4ff" letter-spacing="0.5">HARDWARE-BACKED SECURITY</text>
+
+  <!-- Title -->
+  <text y="140" font-family="'DejaVu Sans', 'Segoe UI', Roboto, Arial, sans-serif" font-weight="bold" font-size="56">
+    <tspan x="390" fill="#00d4ff">Yubi </tspan><tspan fill="#e6e6ee">AppGate</tspan>
+  </text>
+
+  <!-- Subtitle -->
+  <text x="390" y="186" font-family="'DejaVu Sans', 'Segoe UI', Roboto, Arial, sans-serif" font-weight="normal" font-size="24" fill="#787896">Lock Android Apps with Your YubiKey</text>
+
+  <!-- Divider -->
+  <line x1="390" y1="216" x2="650" y2="216" stroke="url(#fgDivider)" stroke-width="1.2"/>
+
+  <!-- Feature list -->
+  <g font-family="'DejaVu Sans', 'Segoe UI', Roboto, Arial, sans-serif" font-size="18">
+    <!-- Item 1 -->
+    <text x="390" y="250" fill="#00ff88" font-weight="bold">&#x2713;</text>
+    <text x="412" y="250" fill="#787896">YubiKey HMAC-SHA1 Authentication</text>
+
+    <!-- Item 2 -->
+    <text x="390" y="282" fill="#00ff88" font-weight="bold">&#x2713;</text>
+    <text x="412" y="282" fill="#787896">NFC &amp; USB-C Support</text>
+
+    <!-- Item 3 -->
+    <text x="390" y="314" fill="#00ff88" font-weight="bold">&#x2713;</text>
+    <text x="412" y="314" fill="#787896">System-wide App Protection</text>
+
+    <!-- Item 4 -->
+    <text x="390" y="346" fill="#00ff88" font-weight="bold">&#x2713;</text>
+    <text x="412" y="346" fill="#787896">No Cloud — Fully Offline</text>
+  </g>
+</svg>
