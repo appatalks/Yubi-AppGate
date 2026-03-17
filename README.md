@@ -1,100 +1,52 @@
-# Yubi AppGate — Website
+# Yubi AppGate
 
-This repository hosts the **GitHub Pages** website for **Yubi AppGate**, an Android app that locks apps behind YubiKey HMAC-SHA1 challenge-response authentication.
+Lock your Android apps behind a physical YubiKey using HMAC-SHA1 challenge-response authentication. No passwords to remember, no PINs to guess. If you don't have the key, you don't get in.
 
-🔗 **Live site:** [https://appatalks.github.io/Yubi-AppGate/](https://appatalks.github.io/Yubi-AppGate/)
+[Website](https://appatalks.github.io/Yubi-AppGate/) · [Get it on Google Play](https://play.google.com/store/apps/details?id=com.appatalks.yubi_appgate)
 
-## Pages
+## What It Does
 
-| Page | File | Purpose |
-|------|------|---------|
-| Home | `index.html` | App overview, features, pricing, download link |
-| Features | `features.html` | Detailed feature descriptions |
-| How It Works | `how-it-works.html` | Step-by-step setup and usage guide |
-| Support | `support.html` | FAQ, troubleshooting, contact |
-| Privacy Policy | `privacy.html` | Privacy policy (required for Google Play) |
-| Security | `security.html` | Authentication architecture explanation |
+- Locks any app behind your YubiKey (NFC or USB-C)
+- System-wide protection via accessibility service: blocks protected apps no matter how they're launched
+- Optional uninstall protection through Device Administrator mode
+- Entirely offline. No accounts, no cloud, no telemetry
 
-## Structure
+## Getting Started
 
-```
-/
-├── index.html
-├── features.html
-├── how-it-works.html
-├── support.html
-├── privacy.html
-├── security.html
-├── css/
-│   └── styles.css
-├── js/
-│   └── script.js
-├── assets/
-│   └── images/          ← screenshot and image assets
-└── README.md
-```
+1. Install Yubi AppGate from Google Play
+2. Plug in or tap your YubiKey to enroll it
+3. Pick the apps you want to protect
+4. (Optional) Enable system-wide protection in Settings → Accessibility → Yubi AppGate
 
-## Deploy to GitHub Pages
+For a full walkthrough, see the [How It Works](https://appatalks.github.io/Yubi-AppGate/how-it-works.html) page.
 
-1. **Push this repo** to `https://github.com/appatalks/Yubi-AppGate`.
+## Free vs Pro
 
-2. Go to **Settings → Pages** in the GitHub repository.
+| | Free | Pro ($6.99) |
+|---|---|---|
+| Protected apps | 2 | Unlimited |
+| YubiKey enrollment | Yes | Yes |
+| System-wide protection | Yes | Yes |
+| Uninstall protection | Yes | Yes |
+| License | — | Lifetime |
 
-3. Under **Source**, select:
-   - **Branch:** `main`
-   - **Folder:** `/ (root)`
+## Feedback and Issues
 
-4. Click **Save**. The site will be live at:
-   ```
-   https://appatalks.github.io/Yubi-AppGate/
-   ```
+This repository doubles as the support portal for Yubi AppGate. If you have a bug report, feature request, or question:
 
-5. *(Optional)* To use a custom domain, add a `CNAME` file to the repo root containing your domain, and configure DNS accordingly.
+- [Open an issue](https://github.com/appatalks/Yubi-AppGate/issues)
 
-## Replace Screenshot Placeholders
+Please include your Android version and device model when reporting bugs.
 
-The home page includes placeholder cards for app screenshots. To replace them with real images:
+## Security
 
-1. Take screenshots on your Android device (setup screen, app selection, lock screen).
+Yubi AppGate never stores your YubiKey's secret. Each unlock generates a fresh HMAC-SHA1 challenge and verifies the response on-device. No data leaves your phone.
 
-2. Save them in `assets/images/` — for example:
-   ```
-   assets/images/screenshot-setup.png
-   assets/images/screenshot-apps.png
-   assets/images/screenshot-lock.png
-   ```
+For details on the authentication architecture, see the [Security](https://appatalks.github.io/Yubi-AppGate/security.html) page.
 
-3. Open `index.html` and find the `<!-- Screenshots -->` section. Replace each placeholder `<div>` with an `<img>` tag:
+## Privacy
 
-   ```html
-   <!-- Before -->
-   <div class="screenshot-placeholder">
-     <span class="placeholder-icon">📱</span>
-     <span>Setup Screen</span>
-   </div>
-
-   <!-- After -->
-   <img src="assets/images/screenshot-setup.png"
-        alt="Yubi AppGate setup screen"
-        style="border-radius:20px;width:100%;">
-   ```
-
-4. Commit and push. The screenshots will appear on the live site.
-
-## Customization
-
-- **Google Play link** — Update the `play.google.com` URLs in all pages once the app is published.
-- **Contact email** — The support email is set to `appatalks@closetemail.com`. Change it in `support.html`, `privacy.html`, and `security.html` if needed.
-- **Pricing** — The Free/Pro pricing cards are on `index.html` and `features.html`. Update pricing details as needed.
-- **Colors** — Edit the CSS custom properties at the top of `css/styles.css` to change the color scheme.
-
-## Tech Stack
-
-- Static HTML, CSS, JavaScript only
-- No frameworks, no build step, no dependencies
-- Mobile responsive
-- Dark theme with neon accents
-- Accessible color contrast and keyboard navigation
+The app collects no personal data. No analytics, no crash reporting, no network calls. Full policy: [Privacy Policy](https://appatalks.github.io/Yubi-AppGate/privacy.html).
 
 ## License
 
