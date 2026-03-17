@@ -42,7 +42,7 @@
       <div class="section-header fade-in">
         <p class="section-label">Features</p>
         <h1>Built for Hardware Security</h1>
-        <p>Yubi AppGate brings real cryptographic authentication to Android app locking — powered by your YubiKey.</p>
+        <p>Yubi AppGate brings real cryptographic authentication to Android app locking, powered by your YubiKey.</p>
       </div>
 
       <!-- Feature: Hardware Key -->
@@ -52,14 +52,14 @@
           <h2>Hardware Security Key Protection</h2>
           <p>
             Unlike PIN or pattern-based app lockers, Yubi AppGate relies on a physical
-            hardware security key&nbsp;&mdash; your YubiKey. The app uses the
+            hardware security key: your YubiKey. The app uses the
             <strong>HMAC-SHA1 challenge-response</strong> protocol, where a random
             cryptographic challenge is sent to the YubiKey and the key computes a
             response using a secret stored in its tamper-resistant secure element.
           </p>
           <p>
             This means authentication cannot be bypassed by guessing, shoulder-surfing,
-            or screen recording. You need the physical key&nbsp;&mdash; period.
+            or screen recording. You need the physical key. Period.
           </p>
         </div>
       </section>
@@ -91,8 +91,8 @@
             Yubi AppGate supports both connection methods offered by modern YubiKeys:
           </p>
           <ul style="padding-left:1.5em;color:var(--text-secondary);margin-top:0.5em;">
-            <li><strong>NFC</strong>&nbsp;&mdash; Hold your YubiKey against the back of your phone. The app uses Android's reader mode to communicate via ISO-DEP (ISO&nbsp;7816), selecting the OTP applet and executing challenge-response directly.</li>
-            <li style="margin-top:0.5em;"><strong>USB-C</strong>&nbsp;&mdash; Plug your YubiKey into the USB-C port. The app communicates over the CCID (smart card) interface, providing the same secure challenge-response without NFC.</li>
+            <li><strong>NFC:</strong> Hold your YubiKey against the back of your phone. The app uses Android's reader mode to communicate via ISO-DEP (ISO&nbsp;7816), selecting the OTP applet and executing challenge-response directly.</li>
+            <li style="margin-top:0.5em;"><strong>USB-C:</strong> Plug your YubiKey into the USB-C port. The app communicates over the CCID (smart card) interface, providing the same secure challenge-response without NFC.</li>
           </ul>
           <p class="mt-2">
             Transport status is shown in-app so you always know whether your key is detected and ready.
@@ -125,8 +125,8 @@
           <h2>System-wide App Protection</h2>
           <p>
             With the accessibility service enabled, Yubi AppGate monitors which app
-            is in the foreground. When a protected app is detected — whether launched
-            from the home screen, recent apps, or another app — the lock screen
+            is in the foreground. When a protected app is detected, whether launched
+            from the home screen, recent apps, or another app, the lock screen
             appears immediately, requiring YubiKey authentication before the app
             becomes usable.
           </p>
@@ -166,7 +166,7 @@
               <li><span class="check">✓</span> NFC &amp; USB-C</li>
               <li><span class="check">✓</span> System-wide protection</li>
               <li><span class="check">✓</span> Uninstall protection</li>
-              <li><span class="dash">—</span> Unlimited locks</li>
+              <li><span class="dash">✕</span> Unlimited locks</li>
             </ul>
           </div>
           <div class="pricing-card featured">

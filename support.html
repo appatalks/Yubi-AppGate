@@ -95,7 +95,7 @@
                 <ul>
                   <li>Make sure NFC is enabled in your phone's Settings.</li>
                   <li>Hold the YubiKey flat against the back of your phone, near the NFC antenna (usually upper-center).</li>
-                  <li>Keep the key steady for 1–2 seconds — don't tap and pull away too quickly.</li>
+                  <li>Keep the key steady for 1 to 2 seconds. Don't tap and pull away too quickly.</li>
                   <li>Remove any thick phone case that might block NFC signals.</li>
                   <li>Check the transport status in the app's Setup tab to confirm NFC shows "Ready."</li>
                 </ul>
@@ -129,9 +129,9 @@
               <div class="faq-answer-inner">
                 <p>This means the YubiKey's HMAC-SHA1 response doesn't match the enrolled identity. Common causes:</p>
                 <ul>
-                  <li><strong>Wrong slot selected</strong> — Make sure the slot in the app matches the slot where you programmed the HMAC-SHA1 secret.</li>
-                  <li><strong>Secret was re-programmed</strong> — If you reprogrammed the YubiKey's secret after enrollment, you need to reset enrollment in the app and re-enroll.</li>
-                  <li><strong>Different YubiKey</strong> — You're tapping a different YubiKey than the one originally enrolled.</li>
+                  <li><strong>Wrong slot selected:</strong> Make sure the slot in the app matches the slot where you programmed the HMAC-SHA1 secret.</li>
+                  <li><strong>Secret was re-programmed:</strong> If you reprogrammed the YubiKey's secret after enrollment, you need to reset enrollment in the app and re-enroll.</li>
+                  <li><strong>Different YubiKey:</strong> You're tapping a different YubiKey than the one originally enrolled.</li>
                 </ul>
                 <p>To fix: go to <strong>Setup → Reset enrollment</strong>, then re-enroll with the correct YubiKey and slot.</p>
               </div>
@@ -222,7 +222,7 @@
             <li>The OTP applet may be disabled on your YubiKey. Open YubiKey Manager, go to <strong>Interfaces</strong>, and ensure OTP is enabled for NFC and/or USB.</li>
           </ul>
 
-          <h3>App locked itself — how do I get back in?</h3>
+          <h3>App locked itself. How do I get back in?</h3>
           <ul>
             <li>Yubi AppGate protects itself once a YubiKey is enrolled. Simply tap your enrolled YubiKey to authenticate and access the app.</li>
             <li>If you've lost your YubiKey, you can clear the app's data via <strong>Settings → Apps → Yubi AppGate → Clear Data</strong> to reset enrollment. This will remove all protection settings.</li>

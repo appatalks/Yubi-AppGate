@@ -54,7 +54,7 @@
               <h3>Install Yubi AppGate</h3>
               <p>
                 Download the app from Google Play and open it. No account creation
-                required — the app is fully offline. On first launch you'll see the
+                required since the app is fully offline. On first launch you'll see the
                 Setup tab with enrollment and service status.
               </p>
             </div>
@@ -70,7 +70,7 @@
                 <a href="https://www.yubico.com/support/download/yubikey-manager/" target="_blank" rel="noopener">YubiKey Manager</a>).
                 Select the matching slot in the app, then tap your key over NFC or
                 connect via USB-C. The app sends a test challenge and records the
-                hardware response — this is a <strong>Trust On First Use (TOFU)</strong>
+                hardware response. This is a <strong>Trust On First Use (TOFU)</strong>
                 enrollment. The raw secret is never entered into the app.
               </p>
             </div>
@@ -94,8 +94,8 @@
             <div class="step-content">
               <h3>Authenticate &amp; Unlock</h3>
               <p>
-                When a protected app is opened — from any launcher, recent apps, or
-                deep link — a lock screen appears. Tap your YubiKey over NFC or
+                When a protected app is opened, whether from a launcher, recent apps, or
+                a deep link, a lock screen appears. Tap your YubiKey over NFC or
                 press the USB button. The app generates a fresh challenge, sends it
                 to the YubiKey, and verifies the response against the enrolled
                 identity. If it matches, the app unlocks instantly. A short cooldown
@@ -132,8 +132,8 @@
           <h2>Optional: Enable System-wide Protection</h2>
           <p>
             By default, Yubi AppGate gates apps launched from within the app. For
-            <strong>system-wide</strong> protection — blocking protected apps no matter
-            how they're launched — enable the app's accessibility service in
+            <strong>system-wide</strong> protection that blocks protected apps no matter
+            how they're launched, enable the app's accessibility service in
             <em>Settings → Accessibility → Yubi AppGate</em>.
           </p>
           <div class="prose-callout">
@@ -141,7 +141,7 @@
             API for third-party apps to intercept app launches. The accessibility service
             monitors foreground window changes to detect when a protected app appears,
             then overlays the lock screen. The service does not read or modify screen
-            content — it only observes package names.
+            content. It only observes package names.
           </div>
           <p>
             You can also enable <strong>uninstall protection</strong> via Device

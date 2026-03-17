@@ -91,8 +91,8 @@
             challenge and verifies that the YubiKey produces the same response.
           </p>
           <p>
-            This is a <strong>Trust On First Use</strong> model — the first YubiKey
-            you enroll becomes the trusted key. To switch keys, you reset enrollment
+            This is a <strong>Trust On First Use</strong> model, so the first YubiKey
+            you enroll becomes the trusted key. To switch keys, reset enrollment
             and re-enroll with a different YubiKey.
           </p>
 
@@ -122,7 +122,7 @@
           </p>
           <p>
             The YubiKey's HMAC-SHA1 shared secret never leaves the hardware key's
-            secure element. The app never has access to the raw secret — it only
+            secure element. The app never has access to the raw secret. It only
             sends challenges and receives responses.
           </p>
 
@@ -145,8 +145,8 @@
 
           <h2>Self-Protection</h2>
           <p>
-            Once a YubiKey is enrolled, Yubi AppGate protects itself — opening the
-            app requires YubiKey authentication. This prevents someone from
+            Once a YubiKey is enrolled, Yubi AppGate protects itself. Opening the
+            app requires YubiKey authentication, which prevents someone from
             modifying your protection settings without your hardware key.
           </p>
 
@@ -163,14 +163,14 @@
             As with any security tool, there are important considerations:
           </p>
           <ul>
-            <li><strong>Physical key loss</strong> — If you lose your YubiKey, you can
+            <li><strong>Physical key loss:</strong> If you lose your YubiKey, you can
               still clear the app's data via Android Settings to remove protection. This
               is by design, as Android does not allow third-party apps to make the device
               permanently inaccessible.</li>
-            <li><strong>Rooted devices</strong> — On a rooted device, any app can
+            <li><strong>Rooted devices:</strong> On a rooted device, any app can
               potentially access another app's private storage. For maximum security,
               use Yubi AppGate on a non-rooted device.</li>
-            <li><strong>Accessibility service trust</strong> — The accessibility service
+            <li><strong>Accessibility service trust:</strong> The accessibility service
               requires user consent. It only observes foreground package names and does
               not read screen content.</li>
           </ul>
