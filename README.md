@@ -50,6 +50,10 @@ For details on the authentication architecture, see the [Security](https://appat
 
 The app collects no personal data. No analytics, no crash reporting, no network calls. Full policy: [Privacy Policy](https://appatalks.github.io/Yubi-AppGate/privacy.html).
 
+## Disclaimer
+
+Yubi AppGate is provided "as is" without warranty of any kind, express or implied. The developer is not responsible for data loss, device lockouts, or factory resets resulting from lost or damaged YubiKeys. Locking system applications such as Android Settings may make your device unrecoverable without a factory reset. Use at your own risk.
+
 ## License
 
 This website content is proprietary. The Yubi AppGate source code is maintained in a separate private repository.
