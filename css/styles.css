@@ -386,10 +386,30 @@ p { margin-bottom: 1em; }
 /* ─── Screenshot Showcase ───────────────────────────────────────── */
 .screenshots {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(5, 1fr);
   gap: 1.5rem;
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
+}
+
+.screenshot-item {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-card);
+  transition: all var(--transition);
+}
+
+.screenshot-item:hover {
+  border-color: rgba(0, 212, 255, 0.2);
+  box-shadow: var(--glow-cyan);
+  transform: translateY(-4px);
+}
+
+.screenshot-item img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .screenshot-placeholder {
@@ -777,7 +797,7 @@ p { margin-bottom: 1em; }
   }
 
   .screenshots {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .step {
@@ -792,8 +812,8 @@ p { margin-bottom: 1em; }
 
 @media (max-width: 480px) {
   .screenshots {
-    grid-template-columns: 1fr;
-    max-width: 260px;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 360px;
   }
 
   .pricing-grid {
