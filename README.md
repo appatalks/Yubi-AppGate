@@ -1,4 +1,6 @@
-# Yubi AppGate
+<p align="center">
+  <img src="assets/images/logo-horizontal.svg" alt="Yubi AppGate" width="360">
+</p>
 
 Lock your Android apps behind a physical YubiKey using HMAC-SHA1 challenge-response authentication. No passwords to remember, no PINs to guess. If you don't have the key, you don't get in.
 
