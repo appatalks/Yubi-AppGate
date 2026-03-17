@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="80" viewBox="0 0 360 80">
+  <defs>
+    <linearGradient id="logoShieldFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0c1c2a" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#06060c" stop-opacity="0.95"/>
+    </linearGradient>
+    <filter id="logoGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Shield with padlock -->
+  <g transform="translate(40, 40)" filter="url(#logoGlow)">
+    <!-- Shield outline -->
+    <path d="
+      M 0 -30
+      C 12 -33, 26 -31, 32 -27
+      L 32 -8
+      C 32 8, 26 26, 14 38
+      C 6 46, 2 48, 0 50
+      C -2 48, -6 46, -14 38
+      C -26 26, -32 8, -32 -8
+      L -32 -27
+      C -26 -31, -12 -33, 0 -30
+      Z
+    " fill="url(#logoShieldFill)" stroke="#00d4ff" stroke-width="2" stroke-linejoin="round"/>
+
+    <!-- Padlock shackle -->
+    <path d="M -7 -6 C -7 -15, -7 -20, 0 -20 C 7 -20, 7 -15, 7 -6"
+          fill="none" stroke="#00d4ff" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- Padlock body -->
+    <rect x="-10" y="-7" width="20" height="16" rx="3" fill="#00d4ff"/>
+
+    <!-- Keyhole -->
+    <circle cx="0" cy="-1" r="2.5" fill="#06060c"/>
+    <rect x="-1" y="1" width="2" height="5" rx="0.8" fill="#06060c"/>
+  </g>
+
+  <!-- Text: Yubi -->
+  <text x="82" y="48" font-family="'DejaVu Sans', 'Segoe UI', Roboto, Arial, sans-serif" font-weight="bold" font-size="32" fill="#00d4ff">Yubi</text>
+
+  <!-- Text: AppGate -->
+  <text x="157" y="48" font-family="'DejaVu Sans', 'Segoe UI', Roboto, Arial, sans-serif" font-weight="bold" font-size="32" fill="#e6e6ee">AppGate</text>
+</svg>
