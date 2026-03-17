@@ -153,9 +153,7 @@
           <h2>Uninstall Protection</h2>
           <p>
             The optional device administrator mode uses Android's
-            <code>DevicePolicyManager</code> to prevent uninstallation. Deactivating
-            the device admin requires your phone's screen lock (PIN, pattern, or
-            biometric), adding a second layer of defense.
+            <code>DevicePolicyManager</code> to prevent uninstallation.
           </p>
 
           <h2>Security Considerations</h2>
@@ -173,6 +171,12 @@
             <li><strong>Accessibility service trust:</strong> The accessibility service
               requires user consent. It only observes foreground package names and does
               not read screen content.</li>
+            <li><strong>Locking Android Settings:</strong> You can add Android Settings
+              to your protected app list, which prevents anyone from disabling the
+              accessibility service or removing Device Administrator privileges without
+              your YubiKey. This significantly hardens the device, but if your key is
+              lost or destroyed, a full factory reset will be required to regain access
+              to Settings.</li>
           </ul>
 
         </div>
@@ -181,9 +185,9 @@
       <!-- CTA -->
       <div class="cta-banner fade-in">
         <h2>Questions About Security?</h2>
-        <p>If you have security concerns or want to report a vulnerability, please reach out.</p>
-        <a href="mailto:appatalks@closetemail.com" class="btn btn-primary">
-          ✉ Contact Us
+        <p>If you have security concerns or want to report a vulnerability, please open an issue.</p>
+        <a href="https://github.com/appatalks/Yubi-AppGate/issues" class="btn btn-primary" target="_blank" rel="noopener">
+          🐛 Report on GitHub
         </a>
       </div>
 
